@@ -1,0 +1,13 @@
+
+grails {
+        awsAccounts=[<%= node['asgard']['aws_accounts'].map{|v| "\"#{v}\""}.join(',') -%>]
+        awsAccountNames=[<%= @aws_account_names.map{|k,v| "\"#{k}\":\"#{v}\""}.join(',') -%>]
+}
+secret {
+        accessId="<%= node['asgard']['access_id'] %>"
+        secretKey="<%= node['asgard']['secret_key'] %>"
+}
+cloud {
+        accountName="<%= node['asgard']['account_name'] %>"
+        publicResourceAccounts=[<%= node['asgard']['public_resource_accounts'].map{|v| "\"#{v}\""}.join(',') -%>]
+}
