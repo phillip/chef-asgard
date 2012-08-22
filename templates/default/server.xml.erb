@@ -6,7 +6,7 @@
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
   <Service name="Catalina">
     <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000"
-               redirectPort="8443" />
+               redirectPort="8443" secure="true" />
     <Engine name="Catalina" defaultHost="localhost">
       <Host appBase="webapps" autoDeploy="false" deployOnStartup="false"
             name="localhost" unpackWARs="true" xmlValidation="false"
