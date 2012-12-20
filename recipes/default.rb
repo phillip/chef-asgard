@@ -67,7 +67,7 @@ if node['asgard']['src_url'] and node['asgard']['src_url'][0,4] == "http"
     group "root"
   end
   
-  grails_version = "1.3.7"
+  grails_version = node['asgrad']['grails_version']
   remote_file "/tmp/grails-#{grails_version}.zip" do
     source "http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-#{grails_version}.zip"
     owner "root"

@@ -19,6 +19,7 @@
 
 default['asgard']['port'] = '8080'
 
+default['asgrad']['grails_version'] = "2.1.1"
 #grails
 default['asgard']['aws_accounts'] = [] # ["12345", "67890"]
 default['asgard']['aws_account_names'] = {} # {"12345"=>"prod","67890"=>"test"}
