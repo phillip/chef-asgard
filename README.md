@@ -28,6 +28,11 @@ Attributes
 * `default['asgard']['public_resource_accounts']` - An array of public resource accounts for Config.groovy
 * `default['asgard']['src_url']` - Allows building from source, ex: https://github.com/netflix/asgard/tarball/master
 
+* `default['asgard']['eureka']['active']` - Activates Eureka integration
+* `default['asgard']['eureka']['regions_to_servers']` - Hash of Eureka addresses per region
+* `default['asgard']['eureka']['port']` - Port Eureka uses
+
+
 Usage
 =====
 

@@ -1,4 +1,6 @@
-
+<% if node['asgard']['eureka']['active'] %>
+import com.netflix.asgard.Region
+<% end %>
 grails {
         awsAccounts=[<%= node['asgard']['aws_accounts'].map{|v| "\"#{v}\""}.join(',') -%>]
         awsAccountNames=[<%= @aws_account_names.map{|k,v| "\"#{k}\":\"#{v}\""}.join(',') -%>]
@@ -11,3 +13,13 @@ cloud {
         accountName="<%= node['asgard']['account_name'] %>"
         publicResourceAccounts=[<%= node['asgard']['public_resource_accounts'].map{|v| "\"#{v}\""}.join(',') -%>]
 }
+<% if node['asgard']['eureka']['active'] %>
+eureka {
+    port = <%= node['asgard']['eureka']['port']%>
+    regionsToServers = [
+        <% node['asgard']['eureka']['regions_to_servers'].each do |k,v| %>
+        (Region.<%= k %>): '<%= v %>',
+        <% end %>
+    ]
+}
+<% end %>
